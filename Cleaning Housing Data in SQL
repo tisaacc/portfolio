@@ -84,10 +84,6 @@ Add OwnerSplitState nvarchar(255)
 update NashvilleHousing
 set OwnerSplitState = parsename(replace(OwnerAddress, ',', '.'), 1)
 
--- Checking once again to see if queries worked
-
-select * from PortfolioProjects.dbo.NashvilleHousing
-
 -- Cleaning up the SoldAsVacant column to standardize Y/N to Yes/No
 
 select distinct(SoldAsVacant), count(SoldAsVacant)
